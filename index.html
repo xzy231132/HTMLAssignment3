@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Killian's Dynamic Webpage With Images</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        var date = new Date();
+	    var hour = date.getHours();
+	    var minute = date.getMinutes();
+	    var img;
+	        if (hour >= 6 && hour < 12) {
+                if (hour == 6 && minute == 0) {
+                    img = "evening";
+                }
+                else {
+                	img = "morning";
+                }
+	        } else if (hour >= 12 && hour < 18) {
+                if (hour == 12 && minute == 0) {
+                    img = "morning";
+                }
+                else {
+                	img = "afternoon";
+                }
+            }
+           else {
+            	img = "night";
+	       }
+           window.onload = function () {
+           		document.getElementById("dynamicImage").src = img + ".jpg";
+        };
+        </script>
+    </head>
+    <body>
+        <h2> Welcome to my Dynamic Webpage with Images!</h2>
+        <ul>
+            <li>My name is Killian Green.</li>
+            <li>I am a computer science and political science double major.</li>
+            <li>This is for course COP 4813, Web Applications Programming.</li>
+        </ul>
+        <img src="dynamicImage" alt="A dynamic image according to the time of day.">
+    </body>
+</html>
