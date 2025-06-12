@@ -5,17 +5,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
+	// Must create a date first to read the hours and minutes.
         var date = new Date();
 	var hour = date.getHours();
 	var minute = date.getMinutes();
 	var img;
+		// Simple time of day checks. If it is between 0600 and 1200, check if it is 0600 sharp. If so, it's the morning.
+		// Does the same thing with it being between 1200 and 1800, and if it isn't between then then it is evening.
 	        if (hour >= 6 && hour < 12) {
                 	if (hour == 6 && minute == 0) {
                     		img = "evening";
                 	}
                 	else {
                 		img = "morning";
-                	}
+			}
 		} else if (hour >= 12 && hour < 18) {
                 	if (hour == 12 && minute == 0) {
 	                	img = "morning";
@@ -26,6 +29,7 @@
 		} else {
             		img = "evening";
 		}
+		// Selects image on load.
            	window.onload = function () {
            		document.getElementById("dynamicImage").src = img + ".jpg";
         	};
@@ -38,6 +42,7 @@
             <li>I am a computer science and political science double major.</li>
             <li>This is for course COP 4813, Web Applications Programming.</li>
         </ul>
+	<!-- I originally misattributed the id to the src and couldn't figure out why it wasn't working, but that's fixed now. -->
         <img id="dynamicImage" src="" alt="A dynamic image according to the time of day.">
     </body>
 </html>
