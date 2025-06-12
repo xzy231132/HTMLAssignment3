@@ -6,30 +6,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
         var date = new Date();
-	    var hour = date.getHours();
-	    var minute = date.getMinutes();
-	    var img;
+	var hour = date.getHours();
+	var minute = date.getMinutes();
+	var img;
 	        if (hour >= 6 && hour < 12) {
-                if (hour == 6 && minute == 0) {
-                    img = "evening";
-                }
-                else {
-                	img = "morning";
-                }
-	        } else if (hour >= 12 && hour < 18) {
-                if (hour == 12 && minute == 0) {
-                    img = "morning";
-                }
-                else {
-                	img = "afternoon";
-                }
-            }
-           else {
-            	img = "evening";
-	       }
-           window.onload = function () {
-           	document.getElementById("dynamicImage").src = img + ".jpg";
-        };
+                	if (hour == 6 && minute == 0) {
+                    		img = "evening";
+                	}
+                	else {
+                		img = "morning";
+                	}
+		} else if (hour >= 12 && hour < 18) {
+                	if (hour == 12 && minute == 0) {
+	                	img = "morning";
+                	}
+                	else {
+                		img = "afternoon";
+                	}
+		} else {
+            		img = "evening";
+		}
+           	window.onload = function () {
+           		document.getElementById("dynamicImage").src = img + ".jpg";
+        	};
         </script>
     </head>
     <body>
