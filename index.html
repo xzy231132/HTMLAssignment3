@@ -28,7 +28,7 @@
             	img = "night";
 	       }
            window.onload = function () {
-           		document.getElementById("dynamicImage").src = img + ".jpg";
+           	document.getElementById("dynamicImage").src = img + ".jpg";
         };
         </script>
     </head>
@@ -39,6 +39,6 @@
             <li>I am a computer science and political science double major.</li>
             <li>This is for course COP 4813, Web Applications Programming.</li>
         </ul>
-        <img src="dynamicImage" alt="A dynamic image according to the time of day.">
+        <img id="dynamicImage" src="" alt="A dynamic image according to the time of day.">
     </body>
 </html>
